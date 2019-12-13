@@ -16,23 +16,29 @@ const UserForm = ({ values, errors, touched, status }) => {
     <div>
       <Form className="user-form">
         <label>
-          Name
+          <p>Name</p>
           <Field type="text" name="name" />
-          {touched.name && errors.name && <p>{errors.name}</p>}
+          {touched.name && errors.name && (
+            <p className="error">{errors.name}</p>
+          )}
         </label>
         <label>
-          Email
+          <p>Email</p>
           <Field type="email" name="email" />
-          {touched.email && errors.email && <p>{errors.email}</p>}
+          {touched.email && errors.email && (
+            <p className="error">{errors.email}</p>
+          )}
         </label>
         <label>
-          Password
+          <p>Password</p>
           <Field type="password" name="password" />
-          {touched.password && errors.password && <p>{errors.password}</p>}
+          {touched.password && errors.password && (
+            <p className="error">{errors.password}</p>
+          )}
         </label>
         <label>
+          <p>Terms of Serivce</p>
           <Field type="checkbox" name="terms" />
-          Agree to Terms of Service
         </label>
         <button type="submit">Submit</button>
       </Form>
@@ -52,10 +58,10 @@ const FormikUserForm = withFormik({
   },
   validationSchema: Yup.object().shape({
     name: Yup.string().required("Enter Your Name"),
-    email: Yup.string()
+    email: Yup.string().required("Enter Your Email"),
+    password: Yup.string()
       .min(5, "Password is too Short")
-      .required(),
-    password: Yup.string().required("Enter a Password"),
+      .required("Enter Your Password"),
   }),
   handleSubmit(values, { setStatus, resetForm }) {
     axios

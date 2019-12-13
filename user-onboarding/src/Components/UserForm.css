@@ -1,9 +1,57 @@
 .user-form {
   width: 80vw;
-  height: 50vh;
-  margin: auto 7%;
-  padding: 32px;
   font-weight: bold;
   background-color: #f3f3f3;
   box-shadow: 2px 2px 10px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  margin-top: 100px;
+  margin-left: 10%;
+  height: 30vh;
+  padding-top: 30px;
+}
+
+label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+label p {
+  padding-right: 20px;
+}
+
+input {
+  width: 30%;
+  background: white;
+  border: none;
+  border-bottom: 1px solid black;
+  border-radius: 5px;
+  outline: none;
+  color: black;
+  font-size: 1.3rem;
+}
+
+button {
+  width: 120px;
+  height: 30px;
+  margin: 15px 40%;
+  border-radius: 10px;
+  font-size: 0.8rem;
+  color: #282c34;
+  transition: 0.6s;
+}
+
+button:hover {
+  background: #282c34;
+  font-size: 0.9rem;
+  width: 125px;
+  height: 32px;
+  color: #f3f3f3;
+}
+
+.error {
+  color: red;
+  margin-left: 10px;
+  padding-left: 20px;
 }
